@@ -1,0 +1,44 @@
+{
+  "name": "apex-coverage-status",
+  "displayName": "Apex Coverage Status",
+  "description": "Shows Apex code coverage for the active class or trigger in the status bar, using the Salesforce CLI.",
+  "version": "1.0.0",
+  "publisher": "mezrah-consulting",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "Salesforce",
+    "Apex",
+    "Code Coverage"
+  ],
+  "activationEvents": [
+    "workspaceContains:sfdx-project.json"
+  ],
+  "main": "./extension.js",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false,
+      "description": "This extension runs the Salesforce CLI in the workspace folder, so it is disabled in untrusted workspaces."
+    },
+    "virtualWorkspaces": false
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "apexCoverage.refresh",
+        "title": "Refresh Coverage",
+        "category": "Apex Coverage"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "package": "node scripts/build-vsix.js"
+  }
+}
